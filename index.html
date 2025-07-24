@@ -6,7 +6,7 @@
 </head>
 <body>
   <script>
-    setTimeout(() => {
+   
       fetch('https://google.com', {mode: 'cors'})
         .then(() => {
           fetch('https://muratperez.requestcatcher.com/?status=web_security_disabled');
@@ -14,7 +14,7 @@
         .catch(() => {
           fetch('https://muratperez.requestcatcher.com/?status=web_security_enabled');
         });
-    }, 2000);
+    
   </script>
 </body>
 </html>
