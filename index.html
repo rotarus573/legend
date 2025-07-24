@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Hello world</title>
-  <script>
-window.onload = () => {
-      fetch('https://google.com')
-        .then(() => {
-           fetch('https://muratperez.requestcatcher.com/?status=d');
-        })
-        .catch(() => {
-           fetch('https://muratperez.requestcatcher.com/?status=e');
-        });
-    };  </script>
+<meta charset="UTF-8" />
+<title>Image Load Test</title>
+<script>
+  window.onload = () => {
+    const img = new Image();
+    img.onload = () => {
+      fetch('https://muratperez.requestcatcher.com/?status=img_load_success');
+    };
+    img.onerror = () => {
+      fetch('https://muratperez.requestcatcher.com/?status=img_load_failed');
+    };
+    img.src = 'https://google.com/favicon.ico';
+  };
+</script>
 </head>
 <body>
-  <h1>Hello world</h1>
+  <h1>Image Load Test Running...</h1>
 </body>
 </html>
